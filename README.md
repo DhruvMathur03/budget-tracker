@@ -36,3 +36,5 @@ print(result)
 ```
 
 Sample queries for the application features can be found in `sample_queries.py`, and the query outputs in `sample_outputs.txt`
+
+Production queries can be found in `production_queries.py`, with their corresponding outputs in `production_outputs.txt`. The production DB can be found in `flask_server/production.db`.

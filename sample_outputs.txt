@@ -1,26 +1,72 @@
-# Expense Management Add Record
-N/A
+# Expense Management List Records
+expense_1721050957|157.0|Clothes|2024-05-26|I55555|Lululemon
+expense_1718992742|780.0|Rent|2024-06-01|I55555|Rent
+expense_1718992762|35.0|Miscellaneous|2024-06-04|I55555|Gifts
+expense_1718992483|4.78|Food|2024-06-05|I55555|Iced capp
+expense_1718992810|75.0|Clothes|2024-06-07|I55555|H&M
+...
 
-# Expense Management Delete Record
-N/A
+# Spending Goal List Records
+SG4|Food|200.0
+SG5|Rent|900.0
+SG6|Clothes|150.0
+SG7|Miscellaneous|200.0
+SG_1721051068|Groceries|250.0
+
+# Expense Management Add Record
+no output
+
+# Spending Goal Add Record
+no output
 
 # Expense Management Edit Record
-N/A
+no output
 
-# Expense Management List Records
-[('Exp1', 10.0, 'Food', '12-06-23', 3, 'ate at McD')]
+# Spending Goal Edit Record
+no output
 
-# Trends Expenditure vs Allotted Budget Monthly Comparison
-[('Groceries', 250, 300), ('Miscellaneous', 125, 200), ('Food', 250, 150),
- ('Rent', 900, 900), ('Clothes', 250, 150)]
+# Expense Management Delete Record
+no output
 
-# Trends Monthly Expenditure
-[('06', 'Clothes', 75), ('06', 'Food', 250), ('06', 'Groceries', 250),
- ('06', 'Rent', 900), ('06', 'Miscellaneous', 125)]
-
-# Smart Suggestions
-[('Entertainment', 10000.0, None, 5150.0), ('Food', 80.0, 10.0, 251.0), 
-('Groceries', 100.0, 123.0, 100.0), ('Personal Care', 89730423074.0, None, 29910141025.666668)]
+# Spending Goal Delete Record
+no output
 
 # Savings Leaderboard
-[('Evan', 179460865716.0), ('Aly', 14119.76)]
+Evan|89730433124.0
+Aly|1195.0
+Aminah|500.0
+Govind|300.0
+Dhruv|0
+
+# Is Admin
+1
+
+# Fetch Group Permissions
+Aminah|1|1|1|1|role1
+Govind|1|1|0|1|role2
+Evan|1|0|1|1|role3
+Dhruv|0|0|0|1|role4
+Aly|0|0|0|0|role5
+
+# Save Group Permissions
+no output
+
+# Trends Expenditure vs Allotted Budget Monthly Comparison
+Clothes|322.0|150.0
+Food|299.78|200.0
+Groceries|400.25|250.0
+Miscellaneous|35.0|200.0
+Rent|780.0|900.0
+
+# Trends Monthly Expenditure
+4-|Clothes|322.0
+4-|Food|299.78
+4-|Groceries|400.25
+4-|Miscellaneous|35.0
+4-|Rent|780.0
+
+# Smart Suggestions
+Entertainment|10000.0||5150.0
+Food|80.0|10.0|201.25
+Groceries|100.0|123.0|175.0
+Personal Care|89730423074.0||29910141025.6667

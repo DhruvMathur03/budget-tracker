@@ -3,11 +3,11 @@ conn = sqlite3.connect("./flask_server/milestone1.db")
 c = conn.cursor()
 
 # Expense Management List Records
-result = c.execute("SELECT * FROM expenses WHERE user_id='I55555' ORDER BY expenses.date")
+result = c.execute("SELECT * FROM expenses WHERE user_id=12 ORDER BY expenses.date")
 print(result.fetchall())
 
 # Spending Goal List Records
-result = c.execute("SELECT spending_id, category, amount FROM spending_goal WHERE user_id='I55555'")
+result = c.execute("SELECT spending_id, category, amount FROM spending_goal WHERE user_id=12")
 print(result.fetchall())
 
 # Expense Management Add Record
@@ -16,7 +16,7 @@ c.execute("""INSERT INTO expenses (expense_id, amount, category, date, user_id, 
 )
 
 # Spending Goal Add Record
-c.execute("""INSERT INTO spending_goal VALUES (12987312, '1.23', 'New Category', 'I5555')""")
+c.execute("""INSERT INTO spending_goal VALUES (12987312, '1.23', 'New Category', 12)""")
 
 # Expense Management Edit Record
 c.execute("""UPDATE expenses SET 
@@ -75,7 +75,7 @@ result = c.execute(
                 LEFT JOIN 
                     user ON gm.group_id = user.user_id
                 WHERE
-                    gm.ind_id = 'I55555'
+                    gm.ind_id = 12
             )
     )
     SELECT 
@@ -99,8 +99,8 @@ result = c.execute("""SELECT
             role
             LEFT JOIN group_member gm on gm.role_id = role.role_id
         WHERE
-            gm.ind_id = I55555
-            AND gm.group_id = G12345""")
+            gm.ind_id = 12
+            AND gm.group_id = 21""")
 print(result.fetchall())
 
 # Fetch Group Permissions
@@ -117,7 +117,7 @@ result = c.execute("""SELECT
             LEFT JOIN role on gm.role_id = role.role_id
             LEFT JOIN user on user.user_id = gm.ind_id
         WHERE
-            groups.group_id = 'G12345'""")
+            groups.group_id = 21""")
 print(result.fetchall())
 
 # Save Group Permissions
@@ -137,15 +137,15 @@ print(result.fetchall())
 # Trends Expenditure vs Allotted Budget Monthly Comparison
 result = c.execute("""SELECT e.category, SUM(e.amount), sg.amount 
                    FROM expenses e LEFT JOIN spending_goal sg ON e.category = sg.category AND e.user_id = sg.user_id 
-                   WHERE e.user_id = 'I55555' GROUP BY e.category, sg.amount""")
+                   WHERE e.user_id = 12 GROUP BY e.category, sg.amount""")
 print(result.fetchall())
 
 # Trends Monthly Expenditure
 result = c.execute("""SELECT substr(date, 4, 2) AS month, category, SUM(amount) AS total_amount 
-                    FROM expenses WHERE user_id = 'I55555' GROUP BY month, category ORDER BY month""")
+                    FROM expenses WHERE user_id = 12 GROUP BY month, category ORDER BY month""")
 print(result.fetchall())
 
-# Smart Suggestions
+# smart suggestions
 result = c.execute(
         """
         SELECT 
@@ -168,9 +168,9 @@ result = c.execute(
                     category
             ) sg_avg ON sg.category = sg_avg.category
         WHERE 
-            sg.user_id = 'I33333'
+            sg.user_id = 12
         GROUP BY sg.category
-        """,
+        """
     )
 print(result.fetchall())
 
